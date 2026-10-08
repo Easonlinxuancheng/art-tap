@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f1e8">
+  <meta name="description" content="在 Art Tap 蓝靛蜡染工坊，以草木制靛、以蜂蜡绘纹，亲手制作一件独一无二的蓝染作品。">
+  <title>蓝染之间 · 蜡染工坊 — Art Tap</title>
+  <link rel="stylesheet" href="css/batik.css">
+  <script src="js/cloth.js" defer></script>
+  <script src="js/viewer.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body class="batik-app">
+  <a class="bt-skip-link" href="#workshop">跳至蜡染工坊</a>
+  <header class="bt-header">
+    <a class="bt-brand" href="../index.html" aria-label="Art Tap，返回首页"><svg class="bt-brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M7 31 20 7l13 24H7Z" stroke="currentColor" stroke-width="2.4"/><path d="M12 23h20M25 12v23" stroke="currentColor" stroke-width="2.4"/></svg><span>art tap<span class="bt-brand-dot">.</span></span><span class="bt-brand-divider" aria-hidden="true"></span><span class="bt-brand-room">数字手作展厅</span></a>
+    <div class="bt-header-actions"><a class="bt-back" href="../index.html"><span aria-hidden="true">↖</span> 返回展厅</a><button class="bt-text-button" id="restart-top" type="button">重新开始</button></div>
+  </header>
+
+  <main id="workshop" class="bt-main">
+    <div class="bt-intro">
+      <div><p class="bt-eyebrow"><span></span> THE BATIK STUDIO · 蜡染工坊</p><h1>蓝染之间<span class="bt-title-dot">。</span></h1><p class="bt-intro-copy">以草为染，以蜡为封。把时间，染进一块布里。</p></div>
+      <div class="bt-material"><span class="bt-material-swatch" aria-hidden="true"></span><div><small>你手中的材料</small><strong>原生态亚麻粗布</strong><span>天然纤维 · 一布一纹</span></div></div>
+    </div>
+
+    <nav class="bt-steps" aria-label="蜡染工序进度">
+      <ol id="stepper">
+        <li data-step="choose" class="is-current" aria-current="step"><span>01</span><strong>选器</strong></li>
+        <li data-step="prepare"><span>02</span><strong>制靛</strong></li>
+        <li data-step="wax"><span>03</span><strong>绘蜡</strong></li>
+        <li data-step="dye"><span>04</span><strong>浸染</strong></li>
+        <li data-step="rinse"><span>05</span><strong>漂洗</strong></li>
+        <li data-step="dewax"><span>06</span><strong>脱蜡</strong></li>
+        <li data-step="assemble"><span>07</span><strong>成型</strong></li>
+        <li data-step="result"><span>08</span><strong>收藏</strong></li>
+      </ol>
+    </nav>
+
+    <div class="bt-workspace">
+      <section id="scene" class="bt-scene" data-phase="choose" aria-label="蜡染工作台">
+        <div class="bt-scene-topline"><span id="scene-badge" class="bt-scene-badge">一块布，无限可能</span><span class="bt-studio-number">STUDIO / 01</span></div>
+        <div class="bt-orbit bt-orbit-one" aria-hidden="true"></div><div class="bt-orbit bt-orbit-two" aria-hidden="true"></div>
+        <span class="bt-scene-calligraphy" aria-hidden="true">草木<br>有灵</span>
+        <div class="bt-worktable" aria-hidden="true"></div>
+        <div id="cloth-wrap" class="bt-cloth-wrap">
+          <canvas id="cloth-canvas" width="900" height="900" tabindex="0" aria-label="亚麻创作画布，可自由绘蜡。使用鼠标或触屏绘画，键盘操作说明见右侧工具区。">此浏览器无法显示画布，请使用支持 Canvas 的现代浏览器。</canvas>
+          <div class="bt-cloth-pin bt-cloth-pin-left" aria-hidden="true"></div><div class="bt-cloth-pin bt-cloth-pin-right" aria-hidden="true"></div>
+        </div>
+        <div id="prep-leaves" class="bt-prep-leaves" aria-hidden="true">
+          <svg viewBox="0 0 220 240" fill="none"><defs><linearGradient id="leaf-color" x1="20" y1="0" x2="180" y2="220" gradientUnits="userSpaceOnUse"><stop stop-color="#96aa84"/><stop offset="1" stop-color="#355d54"/></linearGradient></defs><g stroke="#677d58" stroke-width="2.5" stroke-linecap="round"><path d="M116 228C101 167 70 107 45 39M117 222C142 158 162 84 160 20M117 222C116 143 119 78 106 11M117 220C87 173 52 151 21 140M118 221C145 186 170 163 200 142"/></g><g fill="url(#leaf-color)"><path d="M73 106C32 103 19 63 25 40C54 44 77 70 73 106Z"/><path d="M71 104C94 82 90 48 76 30C58 49 56 80 71 104Z"/><path d="M49 58C24 48 21 20 29 4C53 17 57 36 49 58Z"/><path d="M90 151C52 150 39 124 37 104C67 107 88 125 90 151Z"/><path d="M90 151C111 125 107 101 95 88C78 105 77 132 90 151Z"/><path d="M111 74C83 63 80 31 88 11C115 28 122 47 111 74Z"/><path d="M112 100C137 82 138 51 128 35C107 50 102 77 112 100Z"/><path d="M115 151C89 144 84 112 93 93C116 108 122 128 115 151Z"/><path d="M118 175C145 159 151 131 141 110C119 123 111 149 118 175Z"/><path d="M157 78C135 61 136 30 151 13C169 35 168 58 157 78Z"/><path d="M153 102C184 93 195 64 189 43C163 55 151 76 153 102Z"/><path d="M141 143C119 124 123 93 136 79C154 100 155 123 141 143Z"/><path d="M140 155C174 151 190 123 187 102C158 110 143 130 140 155Z"/><path d="M72 176C54 148 26 146 7 158C26 179 52 184 72 176Z"/><path d="M163 176C187 181 213 162 216 143C190 141 171 157 163 176Z"/></g><path d="M106 214L128 207M109 219L130 211" stroke="#b69a69" stroke-width="5" stroke-linecap="round"/></svg>
+          <span>蓝靛草 · 自然之色</span>
+        </div>
+        <div id="vat" class="bt-vat" aria-hidden="true"><div class="bt-vat-body"></div><div class="bt-vat-rim"></div><div id="vat-water" class="bt-water"><i class="bt-ripple"></i><i class="bt-ripple"></i><i class="bt-ripple"></i><i class="bt-bubble"></i><i class="bt-bubble"></i><i class="bt-bubble"></i><i class="bt-bubble"></i><div class="bt-floating-wax"></div></div><span class="bt-vat-label">靛</span></div>
+        <div id="steam" class="bt-steam" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div class="bt-water-streams" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="bt-wax-tools" aria-hidden="true"><div class="bt-wax-pot"><span></span></div><div class="bt-copper-knife"></div><span class="bt-tool-label">铜蜡刀 · 蜂蜡</span></div>
+        <svg id="sew-line" class="bt-sew-line" viewBox="0 0 400 400" fill="none" aria-hidden="true"><path d="M65 50H335V350H65V50Z" pathLength="100"/><circle cx="65" cy="50" r="4"/></svg>
+        <div id="viewer" class="bt-viewer" hidden aria-label="立体成品展示，拖动可旋转，滚轮或双指可缩放"></div>
+        <button id="cloth-handle" class="bt-cloth-handle" type="button" hidden aria-label="提布手柄，点击或上下拖动来浸入与取出"><span aria-hidden="true">↕</span><span id="cloth-handle-label">下拉入缸</span></button>
+        <div class="bt-scene-bottomline"><span class="bt-live-dot" aria-hidden="true"></span><p id="scene-caption">虚线是成品的边界，也是创作的起点。</p><span class="bt-corner-mark" aria-hidden="true">✳</span></div>
+      </section>
+
+      <aside class="bt-control-panel" aria-labelledby="step-title">
+        <div class="bt-step-heading"><p id="step-kicker" class="bt-eyebrow">CHAPTER 01 / 选择器物</p><h2 id="step-title">想把蓝，留在哪里？</h2><p id="step-description">选择你要完成的器物。每一件，都从同一块天然亚麻布开始。</p></div>
+
+        <div id="panel-choose" class="bt-step-panel">
+          <div class="bt-carrier-grid" role="group" aria-label="选择成品载体">
+            <button class="bt-carrier" type="button" data-carrier="hanging" aria-pressed="true"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M24 12L32 5L40 12M13 12H51V56H13V12Z"/><path d="M18 17H46V51H18V17Z"/><path d="M23 40C28 31 29 26 32 25C36 30 35 35 41 40M22 44H42"/></svg><strong>亚麻挂画</strong><span>把一方蓝，挂成风景</span></button>
+            <button class="bt-carrier" type="button" data-carrier="coaster" aria-pressed="false"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><ellipse cx="32" cy="35" rx="24" ry="20"/><path d="M8 32V37C8 49 19 57 32 57C45 57 56 49 56 37V32"/><ellipse cx="32" cy="33" rx="19" ry="15" stroke-dasharray="2 3"/><path d="M27 34C25 25 35 24 38 31C40 38 29 41 27 34Z"/></svg><strong>圆形杯垫</strong><span>陪伴每一个慢下来</span></button>
+            <button class="bt-carrier" type="button" data-carrier="bag" aria-pressed="false"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M14 22H50L53 56H11L14 22Z"/><path d="M23 27V15C23 3 41 3 41 15V27M16 51H48"/><path d="M27 36L32 31L37 36L32 41L27 36ZM25 44H39"/></svg><strong>亚麻包包</strong><span>把手作的温度随身带</span></button>
+            <button class="bt-carrier" type="button" data-carrier="shirt" aria-pressed="false"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M23 10L12 14L4 29L15 35L20 27V56H44V27L49 35L60 29L52 14L41 10C39 18 25 18 23 10Z"/><path d="M20 50H44M27 33L32 28L37 33L32 38L27 33Z"/></svg><strong>亚麻上衣</strong><span>让独一份的蓝，贴近你</span></button>
+          </div>
+          <p class="bt-inline-note"><span aria-hidden="true">↗</span> 虚线内外都可自由创作，成品仅保留虚线以内的纹样。</p>
+        </div>
+
+        <div id="panel-prepare" class="bt-step-panel" hidden>
+          <div class="bt-process-story"><span>蓝靛草</span><b aria-hidden="true">＋</b><span>清水</span><b aria-hidden="true">＋</b><span>时间</span><b aria-hidden="true">＝</b><span class="bt-indigo-word">一缸蓝</span></div>
+          <p class="bt-action-description">投入草木，注入清水，再轻轻搅拌。看自然的颜色慢慢醒来。</p>
+          <button id="prep-action" class="bt-button bt-button-primary bt-button-wide" type="button">投入蓝靛草 <span aria-hidden="true">↓</span></button>
+          <div class="bt-progress-group"><label for="prep-progress">制靛进度</label><progress id="prep-progress" value="0" max="100">0%</progress><p id="prep-status" role="status">先放入一束新鲜蓝靛草。</p></div>
+          <p class="bt-inline-note">此处浓缩呈现草木制靛的过程；真实制靛需要更长时间与多道处理。</p>
+        </div>
+
+        <div id="panel-wax" class="bt-step-panel" hidden>
+          <div class="bt-meter-heading"><label for="wax-meter">蜡刀里的蜂蜡</label><output id="wax-value" for="wax-meter">100%</output></div><progress id="wax-meter" class="bt-wax-meter" value="100" max="100">100%</progress>
+          <button id="refill-wax" class="bt-button bt-button-secondary bt-button-wide" type="button"><span aria-hidden="true">＋</span> 沾取蜂蜡</button>
+          <div class="bt-range-control"><label for="brush-size">蜡纹粗细</label><input id="brush-size" type="range" min="4" max="22" value="8" step="1"><div class="bt-range-labels"><span>细纹</span><span>宽纹</span></div></div>
+          <div class="bt-tool-grid"><button id="undo-wax" class="bt-button bt-button-quiet" type="button">↶ 撤销一笔</button><button id="clear-wax" class="bt-button bt-button-quiet" type="button">清除画面</button></div>
+          <button id="motif-wax" class="bt-button bt-button-outline bt-button-wide" type="button"><span aria-hidden="true">✳</span> 从一朵蜡花开始</button>
+          <p class="bt-inline-note">直接在布面滑动绘画。蜡覆盖处会留下自然的白色纹样，蜡量不足时请重新沾取。</p>
+          <details class="bt-keyboard-help"><summary>键盘创作方式</summary><p>先聚焦画布，用方向键移动笔尖，按空格切换落笔或抬笔；按住 Shift 再按方向键可加快移动。也可点击「从一朵蜡花开始」添加纹样。</p></details>
+        </div>
+
+        <div id="panel-dye" class="bt-step-panel" hidden>
+          <p class="bt-field-label">这一遍，想染哪里？</p>
+          <div class="bt-segmented" role="group" aria-label="浸染范围"><button type="button" data-dye-region="full" aria-pressed="true">全幅</button><button type="button" data-dye-region="half" aria-pressed="false">半幅</button><button type="button" data-dye-region="local" aria-pressed="false">局部</button></div>
+          <p class="bt-small-copy">选择局部后，点击布面决定落色位置。</p>
+          <div class="bt-dip-counter"><span>已完成浸染</span><div><output id="dip-count">0</output><span>次</span></div></div>
+          <button id="dip-action" class="bt-button bt-button-primary bt-button-wide" type="button">将布料浸入染缸 <span aria-hidden="true">↓</span></button>
+          <div class="bt-progress-group"><label for="oxidation-progress">空气氧化</label><progress id="oxidation-progress" max="100" value="0">0%</progress><p id="dye-status" role="status">入缸为绿，出氧为蓝。</p></div>
+          <div class="bt-color-journey" aria-hidden="true"><i></i><span>黄绿</span><b>→</b><i></i><span>靛蓝</span></div>
+          <p class="bt-inline-note">浸染次数越多，颜色越深；浸泡时长不影响深浅。可反复叠染，也可保留轻盈的一抹蓝。</p>
+        </div>
+
+        <div id="panel-rinse" class="bt-step-panel" hidden>
+          <div class="bt-stage-quote"><span aria-hidden="true">≈</span><p>洗尽浮尘，<br>固色留纹。</p></div>
+          <p class="bt-action-description">让清水流过布面，带走浮色，留下干净通透的靛蓝。</p>
+          <button id="rinse-action" class="bt-button bt-button-primary bt-button-wide" type="button">开始清水漂洗 <span aria-hidden="true">≈</span></button>
+          <div class="bt-progress-group"><label for="rinse-progress">漂洗进度</label><progress id="rinse-progress" max="100" value="0">0%</progress><p id="rinse-status" role="status">染好的布，准备迎接清水。</p></div>
+        </div>
+
+        <div id="panel-dewax" class="bt-step-panel" hidden>
+          <div class="bt-stage-quote bt-stage-quote-wax"><span aria-hidden="true">♨</span><p>熔蜡散尽，<br>纹样终显。</p></div>
+          <p class="bt-action-description">将布料放进热水，等蜂蜡融化。在标记区间内手动取出，感受花纹浮现的一刻。</p>
+          <button id="dewax-action" class="bt-button bt-button-primary bt-button-wide" type="button">放入热水 <span aria-hidden="true">↓</span></button>
+          <div class="bt-progress-group"><label for="dewax-progress">脱蜡进度 <span class="bt-timing-label">取布时机 60–82%</span></label><div class="bt-timing-meter"><progress id="dewax-progress" max="100" value="0">0%</progress><span aria-hidden="true"></span></div><p id="dewax-status" role="status">热水已备好，等待布料入水。</p></div>
+          <p class="bt-inline-note">早一点或晚一点取出，会留下轻微的自然晕染。每一次手作，都有自己的痕迹。</p>
+        </div>
+
+        <div id="panel-assemble" class="bt-step-panel" hidden>
+          <div class="bt-stage-quote"><span aria-hidden="true">⌁</span><p>一针一线，<br>让手作成形。</p></div>
+          <p class="bt-action-description">裁布折片，穿针引线，将染好的麻布缝制成器物。</p>
+          <button id="assemble-action" class="bt-button bt-button-primary bt-button-wide" type="button">开始成型 <span aria-hidden="true">↗</span></button>
+          <div class="bt-progress-group"><label for="assembly-progress">成型进度</label><progress id="assembly-progress" max="100" value="0">0%</progress><p id="assembly-status" role="status">布上的每一笔，都将成为作品的一部分。</p></div>
+        </div>
+
+        <div id="panel-result" class="bt-step-panel" hidden>
+          <div class="bt-result-seal" aria-hidden="true">手<br>作</div><h3 id="result-title">你的独一份蓝染</h3><p id="result-description" class="bt-action-description">草木染岁月，蜡笔绘山河。<br>一布一纹，皆是独一份的手工温柔。</p>
+          <p class="bt-viewer-help"><span aria-hidden="true">↔</span> 拖动旋转 · 滚轮 / 双指缩放<br><span>静置片刻，作品会恢复缓慢自转。</span></p>
+          <button id="save-art" class="bt-button bt-button-primary bt-button-wide" type="button">保存作品图片 <span aria-hidden="true">↓</span></button>
+          <div class="bt-tool-grid"><button id="share-art" class="bt-button bt-button-secondary" type="button">分享作品</button><button id="reset-view" class="bt-button bt-button-quiet" type="button">重置视角</button></div>
+          <button id="download-pattern" class="bt-button bt-button-outline bt-button-wide" type="button">下载纹样原图 <span aria-hidden="true">↘</span></button>
+          <button id="new-art" class="bt-button bt-button-quiet bt-button-wide" type="button">再做一件，留住另一种蓝</button>
+        </div>
+
+        <p id="step-note" class="bt-craft-note"><span aria-hidden="true">✧</span> 载体决定作品的模样，不限制你创作的范围。</p>
+        <footer id="step-footer" class="bt-stage-footer"><button id="next-step" class="bt-button bt-button-primary bt-button-wide" type="button">选好了，开始制靛 <span aria-hidden="true">→</span></button><p id="step-hint">慢慢来，手作没有标准答案。</p></footer>
+      </aside>
+    </div>
+
+    <div class="bt-bottom-note"><p><span aria-hidden="true">✳</span> 草木成色，手心成器。</p><span>工艺时间已为互动体验压缩</span><a href="../index.html">ART TAP · 让艺术发生</a></div>
+  </main>
+
+  <div id="live-status" class="bt-live-status" role="status" aria-live="polite" aria-atomic="true"></div>
+  <dialog id="restart-dialog" class="bt-dialog" aria-labelledby="restart-title"><p class="bt-eyebrow">A NEW BEGINNING</p><h2 id="restart-title">重新取一块布？</h2><p>当前的纹样和工序进度会清空。已完成的作品，可以先保存下来。</p><div class="bt-dialog-actions"><button id="cancel-restart" class="bt-button bt-button-secondary" type="button" autofocus>继续这件作品</button><button id="confirm-restart" class="bt-button bt-button-primary" type="button">重新开始</button></div></dialog>
+  <noscript><div class="bt-noscript">这间手作工坊需要 JavaScript 才能绘画与染色。请在浏览器中启用 JavaScript 后刷新页面。</div></noscript>
+</body>
+</html>
